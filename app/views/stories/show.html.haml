@@ -1,0 +1,13 @@
+%p.display-4= @story.title
+%p= @story.content
+
+%h4 Comments
+- @story.comments.each do |comment|
+  %p= comment.content
+  %small.text-muted= comment.created_at.strftime("%a,%B %d, %Y at %I:%M%p")
+
+%h4 Add comment
+=form_with(model: [ @story, @story.comments.build ], local: true) do |form|
+  = form.text_field :content, class: 'form-control'
+
+  = form.submit 'Add comment', class: 'btn btn-success'

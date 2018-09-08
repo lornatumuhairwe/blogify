@@ -10,6 +10,10 @@
 
   %body
     .container
+
       - flash.each do |name, msg|
-        = content_tag :div, msg, class: name
+        %div{:class => "alert alert-#{name}"}
+          %button.close{"data-dismiss" => "alert", :type => "button"} ×
+          = value
+
       = yield

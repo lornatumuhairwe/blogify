@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  get 'stories/index'
-  get 'stories/new'
-  post 'stories/create'
   root 'home#index'
+
+  resources :stories, except: [:update, :edit, :destroy] do
+    resources :comments
+  end
 end

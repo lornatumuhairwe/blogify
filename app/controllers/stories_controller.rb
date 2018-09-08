@@ -15,6 +15,11 @@ class StoriesController < ApplicationController
     end
   end
 
+  def show
+    @story = Story.find(params[:id])
+    # @comment = @story.comments.new
+  end
+
   private
     def story_params
       params.require(:story).permit(:title, :content)
