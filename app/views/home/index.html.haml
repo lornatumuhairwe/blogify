@@ -1,16 +1,28 @@
-%h2 Posts
+%h2 Storify
 
-- @stories.each do |story|
-  %h4= story.title
-  %p=  story.content
+.jumbotron
+  .display-4= @story.title
+  %small.text-mutated= "#{time_ago_in_words(@story.created_at)} ago"
+  %hr.my-4
+  %p= @story.content
 
-= form_with scope: :story, url: stories_create_path, local: true do |f|
-  %p
-    = f.label :title
-    = f.text_field :title
-  %p
-    = f.label :content
-    = f.text_area :content
-  %p
-    = f.submit 'Create Story'
+.row
+  .col-md-7
+    %p.lead Create a new story
+    = form_with scope: Story.new, url: stories_create_path, local: true do |f|
+      %p
+        = f.label :title
+        %br
+        = f.text_field :title, class: 'form-control'
+      %p
+        = f.label :content
+        %br
+        = f.text_area :content, rows: 3, class: 'form-control'
+      %p
+        = f.submit 'Create Story', class: 'btn btn-success'
 
+  .col-md-5
+    %p.lead Previous stories
+    - @stories.each do |story|
+      %h4= story.title
+      %p=  story.content
