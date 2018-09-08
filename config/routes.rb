@@ -4,4 +4,8 @@ Rails.application.routes.draw do
   resources :stories, except: [:update, :edit, :destroy] do
     resources :comments
   end
+
+  resources :comments do
+    resources :comments
+  end
 end
