@@ -4,6 +4,7 @@ This a blog app with comments. The comments are nested, one can reply to a comme
 
 Other features: 
 - Auth (WIP)
+- Social auth (Not started yet)
 - People should only edit or delete their stories and comments (WIP)
 - Users can upvote and downvote stories/comments (WIP)
 
