@@ -3,7 +3,10 @@
 
 = form_for [comment, Comment.new] do |f|
   = f.text_area :content
+  %br
   = f.submit 'Add reply'
+
+%hr
 
 %ul
   - if comment.comments
