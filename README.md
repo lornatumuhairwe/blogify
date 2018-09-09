@@ -1,24 +1,17 @@
-# README
+# Blogify
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This a blog app with comments. The comments are nested, one can reply to a comment. 
 
-Things you may want to cover:
+Other features: 
+- Auth (WIP)
+- People should only edit or delete their stories and comments (WIP)
+- Users can upvote and downvote stories/comments (WIP)
 
-* Ruby version
+# Dependencies
 
-* System dependencies
+* Ruby 2.5.0
 
-* Configuration
+* Rails 5.2.1
 
-* Database creation
+* Postgresql
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
