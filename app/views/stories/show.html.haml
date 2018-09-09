@@ -2,9 +2,9 @@
 %p= @story.content
 
 %h4 Comments
+%ul
 - @story.comments.each do |comment|
-  %p= comment.content
-  %small.text-muted= comment.created_at.strftime("%a,%B %d, %Y at %I:%M%p")
+  = render 'comments/comment', comment: comment
 
 %h4 Add comment
 =form_with(model: [ @story, @story.comments.build ], local: true) do |form|

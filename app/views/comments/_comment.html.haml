@@ -1,0 +1,11 @@
+%li= comment.content
+%small.text-muted= comment.created_at.strftime("%a,%B %d, %Y at %I:%M%p")
+
+= form_for [comment, Comment.new] do |f|
+  = f.text_area :content
+  = f.submit 'Add reply'
+
+%ul
+  - if comment.comments
+    - comment.comments.each do |comment|
+      = render 'comments/comment', comment: comment
