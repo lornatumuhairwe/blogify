@@ -1,6 +1,9 @@
 %p.display-4= @story.title
 %p= @story.content
 
+- if can? :update, @story
+  = link_to 'Edit', edit_story_path(@story)
+
 %h4 Comments
 %ul
 - @story.comments.each do |comment|
