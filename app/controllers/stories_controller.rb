@@ -1,4 +1,5 @@
 class StoriesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
   end
@@ -17,8 +18,7 @@ class StoriesController < ApplicationController
   end
 
   def show
-    @story = Story.find(params[:id])
-    # @comment = @story.comments.new
+    @story = Story.includes(:comments).find(params[:id])
   end
 
   private
