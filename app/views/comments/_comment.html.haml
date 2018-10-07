@@ -1,10 +1,14 @@
 %li= comment.content
 %small.text-muted= comment.created_at.strftime("%a,%B %d, %Y at %I:%M%p")
+%div
+%button.link_button.add-reply Add reply
 
-= form_for [comment, Comment.new] do |f|
-  = f.text_area :content
-  %br
-  = f.submit 'Add reply'
+.reply.d-none
+  = form_for [comment, Comment.new], remote: true do |f|
+    = f.text_area :content
+    = f.hidden_field :user_id, value: current_user.id
+    %br
+    = f.submit 'Post reply'
 
 %hr
 

@@ -12,5 +12,6 @@
 %h4 Add comment
 =form_with(model: [ @story, @story.comments.build ], local: true) do |form|
   = form.text_area :content, col: 3,class: 'form-control'
+  = form.hidden_field :user_id, value: current_user.id
   %br
   = form.submit 'Add comment', class: 'btn btn-success'
