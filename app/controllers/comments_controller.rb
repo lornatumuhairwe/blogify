@@ -5,7 +5,9 @@ class CommentsController < ApplicationController
   def create
     @commentable.comments.build(comment_params)
     if @commentable.save
-      print 'saved'
+      respond_to do |format|
+        format.js
+      end
     else
       byebug
     end

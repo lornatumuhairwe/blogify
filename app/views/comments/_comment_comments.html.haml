@@ -1,0 +1,4 @@
+%ul
+  - if comment.comments
+    - comment.comments.each do |comment|
+      = render 'comments/comment', comment: comment

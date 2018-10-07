@@ -1,0 +1,6 @@
+var commentable_id = "#{@commentable.id}"
+console.log(commentable_id);
+- if @commentable.commentable_type == 'Comment'
+  $('.comment-comments-' + commentable_id).html('');
+  $('.comment-comments-' + commentable_id).append("#{j render 'comment_comments', comment: @commentable }");
+-#- else

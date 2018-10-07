@@ -1,3 +1,4 @@
+-#- @story.comments.each do |comment|
 %li= comment.content
 %small.text-muted= comment.created_at.strftime("%a,%B %d, %Y at %I:%M%p")
 %div
@@ -11,8 +12,5 @@
     = f.submit 'Post reply'
 
 %hr
-
-%ul
-  - if comment.comments
-    - comment.comments.each do |comment|
-      = render 'comments/comment', comment: comment
+%div{class: "comment-comments-#{comment.id}"}
+  = render 'comments/comment_comments', comment: comment
