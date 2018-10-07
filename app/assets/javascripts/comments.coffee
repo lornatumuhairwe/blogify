@@ -5,3 +5,4 @@ $ ->
   $('.link_button.add-reply').click ->
     $(this).next().removeClass('d-none');
     $(this).addClass('d-none');
+

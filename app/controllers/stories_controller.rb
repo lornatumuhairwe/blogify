@@ -19,7 +19,7 @@ class StoriesController < ApplicationController
   end
 
   def show
-    @story = Story.includes(:comments).find(params[:id])
+    @story = Story.includes(:comments).order('comments.created_at DESC').find(params[:id])
   end
 
   def edit
