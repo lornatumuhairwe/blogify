@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
   def create
     @commentable.comments.build(comment_params)
     if @commentable.save
+      @comment = true if @commentable.try(:commentable_type)
       respond_to do |format|
         format.js
       end

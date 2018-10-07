@@ -5,7 +5,7 @@
   = link_to 'Edit', edit_story_path(@story)
 
 %h4 Comments
-%ul{class: "story-comments-section"}
+%ul{class: "story-comments-section-#{@story.id}"}
   - @story.comments.each do |comment|
     = render 'comments/comment', comment: comment
 
