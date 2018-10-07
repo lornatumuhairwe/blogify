@@ -3,13 +3,17 @@ class CommentsController < ApplicationController
 
 
   def create
-    @commentable.comments.create(comment_params)
-    redirect_to @commentable, alert: 'comment added successfully!'
+    @commentable.comments.build(comment_params)
+    if @commentable.save
+      print 'saved'
+    else
+      byebug
+    end
   end
 
   private
     def comment_params
-      params.require(:comment).permit(:content)
+      params.require(:comment).permit(:content, :user_id)
     end
 
     def set_commentable
