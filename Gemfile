@@ -42,6 +42,7 @@ gem 'jquery-rails'
 
 gem 'devise'
 gem 'cancancan', '~> 2.0'
+gem 'coveralls', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -62,6 +63,8 @@ end
 group :test do
   gem 'shoulda-matchers', '~> 4.0.0.rc1'
   gem 'rspec_junit_formatter' # required by circleci to automatically collect the test metadata
+  gem 'simplecov', require: false
+  gem 'simplecov-rcov'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
