@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/lornatumuhairwe/blogify/tree/master.svg?style=svg)](https://circleci.com/gh/lornatumuhairwe/blogify/tree/master)
+
 # Blogify
 
 This a blog app with comments. The comments are nested, one can reply to a comment. 
